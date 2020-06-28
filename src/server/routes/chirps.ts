@@ -1,5 +1,5 @@
-const express = require('express');
-const chirpStore = require('../chirpstore');
+import express from 'express';
+import chirpStore from '../chirpstore';
 let router = express.Router();
 
 router.get('/:id?', (req, res) => {

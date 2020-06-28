@@ -28,7 +28,7 @@ let deleteChirp = id => {
     writeChirps();
 }
 
-let writeChirps = () => {
+let writeChirps = (chirps) => {
     fs.writeFileSync('chirps.json', JSON.stringify(chirps));
 };
 
