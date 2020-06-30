@@ -1,4 +1,7 @@
 import * as React from 'react';
+import AllChirps from './AllChirps';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SingleChirp from './SingleChirp';
 
 class App extends React.Component<IAppProps, IAppState> {
 	constructor(props: IAppProps) {
@@ -21,7 +24,12 @@ class App extends React.Component<IAppProps, IAppState> {
 	render() {
 		return (
 			<main className="container my-5">
-				<h1 className="text-primary text-center">Hello {this.state.name}!</h1>
+				<Router>
+					<Switch>
+						<Route exact path='/' component={AllChirps} />
+						<Route exact path='/admin' component={SingleChirp} />
+					</Switch>
+				</Router>
 			</main>
 		);
 	}
