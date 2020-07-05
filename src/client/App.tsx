@@ -2,6 +2,7 @@ import * as React from 'react';
 import AllChirps from './AllChirps';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SingleChirp from './SingleChirp';
+import AddChirp from './AddChirp';
 
 class App extends React.Component<IAppProps, IAppState> {
 	constructor(props: IAppProps) {
@@ -28,6 +29,7 @@ class App extends React.Component<IAppProps, IAppState> {
 					<Switch>
 						<Route exact path='/' component={AllChirps} />
 						<Route exact path='/admin' component={SingleChirp} />
+						<Route exact path="/addChirp" component={AddChirp} />
 					</Switch>
 				</Router>
 			</main>
