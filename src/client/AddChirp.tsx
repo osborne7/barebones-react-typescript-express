@@ -9,6 +9,7 @@ export default class AddChirp extends React.Component<IAddChirpProps, IAddChirpS
             user: '',
             text: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     async handleSubmit(e: React.MouseEvent<HTMLButtonElement>) {
