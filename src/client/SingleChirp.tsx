@@ -9,28 +9,65 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
             text: ''
             // chirp: this.props.match.params.chirp
         };
+        this.editText = this.editText.bind(this);
+        this.deleteText = this.deleteText.bind(this);
     
     }
 
     //make a get request for the specific chirp
+    async componentDidMount() {
+        let id = this.props.match.params.id
+        try {
+            let chirpResponse = await fetch(`/api/chirps/${id}`);
+            let chirp = await chirpResponse.json;
+            this.setState({ 
+                user: chirp.user, 
+                text: chirp.text
+                //resolve above user and text discrepancies
+            })
+        } catch(err) {
+            console.log(err);
+        }
+    }
 
     //send user back to main page when chirp is deleted
-    deleteText() {
-
-    }
+    async deleteText() {
+        let id = this.props.match.params.id;
+        try {
+            await fetch(`/api/chirps/${id}`, {
+                method: 'DELETE'
+            });
+            this.props.history.push('/');
+        }
+        catch(err) {
+            console.log(err);
+        }
+    } 
 
     //make a put request for that chirp with a save edit button and send user back to main page
-    editText() {
-        
-    }
+    async editText(e: React.MouseEvent<HTMLButtonElement>) {
+        let id = this.props.match.params.id;
+        let data = {
+            user: this.state.user,
+            text: this.state.text
+        }
+        e.preventDefault();
+
+        try {
+            await fetch(`/api/chirps/${id}`, {
+                method: 'PUT',
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            this.props.history.replace('/');
+        } catch(err) {
+            console.log(err);
+        }
+    };
     
-    textChange() {
-
+    textChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({text: e.target.value});
     }
-
-
-
-
 
     render() {
     // return <h1>{this.state.chirp}</h1>;
@@ -49,7 +86,7 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
 
 }
 
-interface ISingleChirpProps extends RouteComponentProps<{ chirp: string }> {
+interface ISingleChirpProps extends RouteComponentProps<{ id: string }> {
 
 }
 
