@@ -5,7 +5,7 @@ import routes from './routes';
 
 const app = express();
 
-let p = path.join(__dirname, './public');
+let p = path.join(__dirname, '../public');
 console.log(p);
 
 // app.use(cors());

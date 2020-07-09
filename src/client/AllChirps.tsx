@@ -7,28 +7,44 @@ export default class AllChirps extends React.Component<IAllChirpsProps, IAllChir
         super(props);
 
         this.state = {
-            chirps: [
-                {name: "Nellie",
-                message: "Hello",
-                id: 0},
-                {name: "Nadia",
-                message: "Hey",
-                id: 1}
-            ],
-            //check this id logic
-            id: null
+            chirps: []
         }
     }
 
+    async componentWillMount() {
+        let res = await fetch('/api/chirps');
+        let data = await res.json();
+        let chirps = Object.keys(data).map(key => {
+            return {
+                id: key,
+                user: data[key].user,
+                text: data[key].text
+            }
+        })
+        chirps.pop();
+        chirps.reverse();
+        this.setState( { chirps });
+    }
+
     render() {
-        return <ul className="list-chirps">
+        return <div className="list-chirps">
             {this.state.chirps.map(chirp => {
-                return <li className="chirp">
-                    {chirp}
-                    {/* <Link to={`/${chirp.id}`}>{chirp}</Link> */}
-                    </li>
-            })}
-        </ul>
+                return (
+                    <div>
+                        <div className="user">
+                            {chirp.user}
+                            {/* <Link to={`/${chirp.id}`}>{chirp}</Link> */}
+                        </div>
+                        <div className="chirp">
+                            {chirp.text}
+                            {/* <Link to={`/${chirp.id}`}>{chirp}</Link> */}
+                        </div>
+                        <div>
+                            <Link to={`/${chirp.id}/admin`}>Admin</Link>
+                        </div>
+                    </div>
+            )})}
+        </div>
     }
 
 }
@@ -38,6 +54,11 @@ interface IAllChirpsProps {
 }
 
 interface IAllChirpsState {
-    chirps: Array<object>;
-    id: number;
+    // chirps: Array<object>;
+    // id: number;
+    chirps: { 
+        id: string,
+        user: string, 
+        text: string
+    }[];
 }
