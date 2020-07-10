@@ -20,11 +20,11 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
         try {
             let chirpResponse = await fetch(`/api/chirps/${id}`);
             let chirp = await chirpResponse.json;
-            this.setState({ 
-                user: chirp.user, 
-                text: chirp.text
-                //resolve above user and text discrepancies
-            })
+            // this.setState({ 
+            //     user: chirp.user, 
+            //     text: chirp.text
+            //     //resolve above user and text discrepancies
+            // })
         } catch(err) {
             console.log(err);
         }

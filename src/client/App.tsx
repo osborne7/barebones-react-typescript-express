@@ -1,8 +1,11 @@
 import * as React from 'react';
-import AllChirps from './AllChirps';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AllChirps from './AllChirps';
 import SingleChirp from './SingleChirp';
-import AddChirp from './AddChirp';f
+import AddChirp from './AddChirp';
+import Nav from './Nav';
+
+import './scss/app';
 
 class App extends React.Component<IAppProps, IAppState> {
 	constructor(props: IAppProps) {
@@ -12,20 +15,11 @@ class App extends React.Component<IAppProps, IAppState> {
 		};
 	}
 
-	async componentDidMount() {
-		try {
-			let r = await fetch('/api/hello');
-			let name = await r.json();
-			this.setState({ name });
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
 	render() {
 		return (
 			<main className="container my-5">
 				<Router>
+					<Nav />
 					<Switch>
 						<Route exact path='/' component={AllChirps} />
 						<Route exact path='/:id/admin' component={SingleChirp} />
