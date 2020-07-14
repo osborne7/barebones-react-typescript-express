@@ -1,5 +1,38 @@
-$theme-colors: (
-    'primary': #0091ea //Covalence Blue!  :D
-);
+// $theme-colors: (
+//     'primary': #0091ea //Covalence Blue!  :D
+// );
+
+
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+.btn {
+    display: block;
+    padding: 1em;
+    margin: 1em;
+    color: white
+}
+
+a {
+    color: white;
+    &:hover {
+        text-decoration-color: coral;
+        text-decoration-style: double;
+        color: white;
+        // font-size: 1.4em;
+    }
+}
+
+input {
+    margin: .5em;
+    display: inline-block;
+}
+
+.input-chirp {
+    width: 30%;
+}
+// a:hover {
+//     color: white;
+//     text-decoration: none;
+// }

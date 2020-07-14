@@ -39,11 +39,11 @@ export default class AddChirp extends React.Component<IAddChirpProps, IAddChirpS
     render() {
         return (
         <form>
-            <label htmlFor="user">Name</label>
+            <label htmlFor="user" className="text-secondary">Name</label>
             <input onChange={(e: React.ChangeEvent<HTMLInputElement>)=> this.setState({user: e.target.value})}type="text" placeholder="Add username here" value={this.state.user}/>
-            <label htmlFor="text">Write Chirp</label>
-            <input onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({text: e.target.value})}type="text" placeholder="Add chirp here" value={this.state.text} />
-            <button onClick={this.handleSubmit}>Post</button>
+            <label htmlFor="text" className="text-secondary">Write Chirp</label>
+            <input className="input-chirp" onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.setState({text: e.target.value})}type="text" placeholder="Add chirp here" value={this.state.text} />
+            <button className="btn btn-warning" onClick={this.handleSubmit}>Post</button>
         </form>
         )
     }

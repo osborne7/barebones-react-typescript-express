@@ -12,9 +12,9 @@ export default class Nav extends React.Component<INavProps, INavState> {
     render() {
         return (
             <div>
-                <h1>chirper</h1>
-                <Link to="/addChirp">Add Chirp</Link>
-                <Link to="/">All Chirps</Link>
+                <h1 className="text-secondary">chirper</h1>
+                <button className="btn btn-info"><Link to="/addChirp">add chirp</Link></button>
+                <button className="btn btn-info"><Link to="/">all chirps</Link></button>
             </div>
         )
     }

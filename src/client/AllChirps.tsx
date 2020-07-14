@@ -40,7 +40,7 @@ export default class AllChirps extends React.Component<IAllChirpsProps, IAllChir
                             {/* <Link to={`/${chirp.id}`}>{chirp}</Link> */}
                         </div>
                         <div>
-                            <Link to={`/${chirp.id}/admin`}>Admin</Link>
+                            <button className="btn btn-secondary"><Link to={`/${chirp.id}/admin`}>Admin</Link></button>
                         </div>
                     </div>
             )})}
