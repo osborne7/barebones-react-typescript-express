@@ -14,7 +14,11 @@
 h1 {
     display: inline;
 }
+
 .btn {
+    border-radius: 1em;
+}
+.btn-info {
     // display: block;
     padding: 2em 1em;
     margin: 1em 10em;
@@ -41,14 +45,42 @@ input {
     // height: auto;
 }
 
-.name .chirp {
+.name-div {
     display: block;
+}
+
+.chirp-div {
+    display: block;
+}
+
+.chirp {
+    font-size: 1.4em;
+}
+
+.add-chirp {
+    border: 1px solid gray;
+    border-radius: 1em;
+    padding: 3em;
+}
+
+.btn-warning {
+    margin: 2em;
 }
 
 .single-chirp {
     padding: 3em;
-    border: 5px solid black;
-    display: inline;
+    border: 1px solid gray;
+    border-radius: 1em;
+    margin: 1em;
+    // display: inline;
+}
+
+.label-name {
+    margin-right: 3.5em;
+}
+
+.label-chirp {
+    margin-right: 1em;
 }
 
 // a:hover {

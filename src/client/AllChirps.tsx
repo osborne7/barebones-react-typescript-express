@@ -30,7 +30,7 @@ export default class AllChirps extends React.Component<IAllChirpsProps, IAllChir
         return <div className="list-chirps">
             {this.state.chirps.map(chirp => {
                 return (
-                    <div>
+                    <div className="single-chirp">
                         <div className="user">
                             {chirp.user}
                             {/* <Link to={`/${chirp.id}`}>{chirp}</Link> */}
