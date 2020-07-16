@@ -7,10 +7,17 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
 
+.nav {
+    margin: 10em;
+}
+
+h1 {
+    display: inline;
+}
 .btn {
-    display: block;
-    padding: 1em;
-    margin: 1em;
+    // display: block;
+    padding: 2em 1em;
+    margin: 1em 10em;
     color: white
 }
 
@@ -30,8 +37,20 @@ input {
 }
 
 .input-chirp {
-    width: 30%;
+    width: 40em;
+    // height: auto;
 }
+
+.name .chirp {
+    display: block;
+}
+
+.single-chirp {
+    padding: 3em;
+    border: 5px solid black;
+    display: inline;
+}
+
 // a:hover {
 //     color: white;
 //     text-decoration: none;
