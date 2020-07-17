@@ -57,6 +57,10 @@ input {
     font-size: 1.4em;
 }
 
+.user {
+    color: coral;
+}
+
 .add-chirp {
     border: 1px solid gray;
     border-radius: 1em;
@@ -65,6 +69,10 @@ input {
 
 .btn-warning {
     margin: 2em;
+}
+
+.btn-secondary {
+    margin: 1em 0em;
 }
 
 .single-chirp {

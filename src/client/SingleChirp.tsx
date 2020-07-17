@@ -65,8 +65,9 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
         }
     };
     
+    //added user: this.state.user, need to make user remain when text is updated
     textChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({text: e.target.value});
+        this.setState({text: e.target.value, user: this.state.user});
     }
 
     render() {
