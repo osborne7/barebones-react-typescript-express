@@ -19,12 +19,12 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
         let id = this.props.match.params.id
         try {
             let chirpResponse = await fetch(`/api/chirps/${id}`);
-            let chirp = await chirpResponse.json;
-            // this.setState({ 
-            //     user: chirp.user, 
-            //     text: chirp.text
-            //     //resolve above user and text discrepancies
-            // })
+            let chirp = await chirpResponse.json();
+            console.log('chirp: ' + JSON.stringify(chirp));
+            this.setState({ 
+                user: chirp.user, 
+                text: chirp.text
+            })
         } catch(err) {
             console.log(err);
         }
@@ -75,11 +75,12 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
     return (
     <div>
         <div>
+            <h2>edit or delete your chirp</h2>
             <input type="text" defaultValue={this.state.text} onChange={this.textChange}/>
-            <button onClick={this.editText}>edit chirp</button>
+            <button className="btn btn-warning" onClick={this.editText}>edit chirp</button>
         </div>
         <div>
-        <button onClick={this.deleteText}>delete chirp</button>
+        <button className="btn btn-danger" onClick={this.deleteText}>delete chirp</button>
         </div>
     </div>
     )
