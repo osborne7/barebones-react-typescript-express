@@ -73,7 +73,7 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
     render() {
     // return <h1>{this.state.chirp}</h1>;
     return (
-    <div>
+    <div className="admin-div">
         <div>
             <h2>edit or delete your chirp</h2>
             <input type="text" defaultValue={this.state.text} onChange={this.textChange}/>

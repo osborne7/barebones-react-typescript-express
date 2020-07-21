@@ -9,19 +9,25 @@
 
 .nav {
     margin: 10em;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
 }
 
 h1 {
-    display: inline;
+    // display: inline;
+    margin: 1em 0em;
 }
 
 .btn {
     border-radius: 1em;
+    margin: 1em 0em;
 }
 .btn-info {
     // display: block;
-    padding: 2em 1em;
-    margin: 1em 10em;
+    // padding: 2em 1em;
+    // margin: 1em 10em;
     color: white
 }
 
@@ -54,7 +60,7 @@ input {
 }
 
 .chirp {
-    font-size: 1.4em;
+    font-size: 2em;
 }
 
 .user {
@@ -62,6 +68,12 @@ input {
 }
 
 .add-chirp {
+    border: 1px solid gray;
+    border-radius: 1em;
+    padding: 3em;
+}
+
+.admin-div {
     border: 1px solid gray;
     border-radius: 1em;
     padding: 3em;
