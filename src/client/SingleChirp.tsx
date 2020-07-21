@@ -76,10 +76,10 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
     <div>
         <div>
             <input type="text" defaultValue={this.state.text} onChange={this.textChange}/>
+            <button onClick={this.editText}>edit chirp</button>
         </div>
         <div>
-            <button onClick={this.editText}>Edit</button>
-            <button onClick={this.deleteText}>Delete</button>
+        <button onClick={this.deleteText}>delete chirp</button>
         </div>
     </div>
     )
