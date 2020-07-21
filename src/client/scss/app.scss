@@ -1,22 +1,12 @@
-// $theme-colors: (
-//     'primary': #0091ea //Covalence Blue!  :D
-// );
-
-
-
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-
 
 .nav {
     margin: 10em;
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    align-self: center;
 }
 
 h1 {
-    // display: inline;
     margin: 1em 0em;
 }
 
@@ -25,9 +15,6 @@ h1 {
     margin: 1em 0em;
 }
 .btn-info {
-    // display: block;
-    // padding: 2em 1em;
-    // margin: 1em 10em;
     color: white
 }
 
@@ -37,7 +24,6 @@ a {
         text-decoration-color: coral;
         text-decoration-style: double;
         color: white;
-        // font-size: 1.4em;
     }
 }
 
@@ -48,7 +34,6 @@ input {
 
 .input-chirp {
     width: 40em;
-    // height: auto;
 }
 
 .name-div {
@@ -92,7 +77,6 @@ input {
     border: 1px solid gray;
     border-radius: 1em;
     margin: 1em;
-    // display: inline;
 }
 
 .label-name {
@@ -102,8 +86,3 @@ input {
 .label-chirp {
     margin-right: 1em;
 }
-
-// a:hover {
-//     color: white;
-//     text-decoration: none;
-// }
