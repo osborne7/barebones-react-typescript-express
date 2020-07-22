@@ -58,6 +58,20 @@ input {
     padding: 3em;
 }
 
+.edit {
+    border: 1px solid yellowgreen;
+    border-radius: 2em;
+    padding: 3em;
+    margin: 2em;
+}
+
+.delete {
+    border: 1px solid red;
+    border-radius: 2em;
+    padding: 3em;
+    margin: 2em;
+}
+
 .admin-div {
     border: 1px solid gray;
     border-radius: 1em;

@@ -75,12 +75,15 @@ export default class SingleChirp extends React.Component<ISingleChirpProps, ISin
     return (
     <div className="admin-div">
         <div>
-            <h2>edit or delete your chirp</h2>
-            <input type="text" defaultValue={this.state.text} onChange={this.textChange}/>
-            <button className="btn btn-warning" onClick={this.editText}>edit chirp</button>
+            <div className="edit">
+                <h2>edit chirp</h2>
+                <input type="text" defaultValue={this.state.text} onChange={this.textChange}/>
+                <button className="btn btn-warning" onClick={this.editText}>edit chirp</button>
+            </div>
         </div>
-        <div>
-        <button className="btn btn-danger" onClick={this.deleteText}>delete chirp</button>
+        <div className="delete">
+            <h2>delete chirp</h2>
+        <button className="btn btn-danger" onClick={this.deleteText}>delete</button>
         </div>
     </div>
     )
